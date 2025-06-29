@@ -1,38 +1,576 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main section:not(#hero) {
+  padding: 3rem 1rem;
+}
+
+.container-8 {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+/* Flexbox layout for the whole page */
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Each section */
+
+/* Main grows to fill space */
+main {
+  flex: 1;
+}
+
+/* Responsive nav bar */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1rem;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007f5f;
+  cursor: pointer;
+}
+
+/* Responsive breakpoint */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-columns {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .footer-column {
+    flex: 1;
+  }
+}
+
+/*Header*/
+
+.header {
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+  padding: 2rem 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  width: 120px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation styles */
+.nav {
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #495E57;
+}
+
+.nav button{
+  background-color: #495E57;
+  border: none;
+  font-family: 'Karla';
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 20px;
+  cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.nav button:hover{
+  background-color: #30403b
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links li a {
+  font-family: 'Karla';
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem;
+  transition: background 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #495E57;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 200px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+main section {
+  padding: 3rem 1rem;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero .container-8 {
+  max-width: 100%;
+  padding: 0;
+}
+
+.hero-bg {
+  background-color: #495E57;
+  color: white;
+  padding: 3rem 0; /* no left/right padding */
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1{
+  color: #f4ce14;
+  font-family: 'Markazi Text';
+  font-weight: 500;
+  font-size: 70px;
+}
+
+.hero-text h2{
+  color: white;
+  font-family: 'Markazi Text';
+  font-weight: normal;
+  font-size: 40px;
+}
+
+.hero-text p{
+  font-family: 'Karla'
+}
+
+.hero-text h1,
+.hero-text h2,
+.hero-text p,
+.hero-text button {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  line-height: 1.1;
+}
+
+.hero-text h2{
+  margin-bottom: 0.75rem;
+}
+
+
+.hero-text button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  background-color: #f4ce14;
+  color: black;
+  font-weight: bold;
+  font-family: 'Karla';
+  transition: background-color 0.3s ease;
+}
+
+.hero-text button:hover {
+  background-color: #deb00b
+}
+
+.hero-image {
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+/* Menu Section */
+.menu-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.menu-section h2{
+  padding-bottom: 15px;
+  font-size: 45px;
+  font-family: 'Markazi Text';
+}
+
+.menu-item .price{
+  color:#ee9972;
+}
+
+.menu-section img{
+  width: 275px;
+  height: 200px;
+  padding-bottom: 10px;
+  object-fit: cover;
+}
+
+.menu-item {
+  background: #edefee;
+  padding: 1rem;
+  flex: 1;
+  min-width: 250px;
+  border-radius: 8px;
+}
+
+.menu-item h3{
+  font-family: 'Markazi Text';
+  font-size: 30px;
+}
+
+.menu-item p{
+  font-family: 'Karla';
+}
+
+.menu-item h3 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  background-color: #f4ce14;
+  color: black;
+  font-weight: bold;
+  font-family: 'Karla';
+  transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+  background-color: #deb00b
+}
+
+/* Testimonials */
+#testimonials{
+  background-color: #edefee;
+  font-family: 'Karla';
+}
+
+#testimonials h2{
+  padding-bottom:20px;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Karla';
+}
+
+.testimonials-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.testimonial-box {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.testimonial-box img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0.5rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* About Us */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.about-section h2{
+  font-family: 'Markazi Text';
+  color: #495e57;
+  font-size: 60px;
+  font-weight: 500;
+  margin-bottom: -25px;
+}
+
+.about-section h3{
+  font-family: 'Markazi Text';
+  color: #ee9972;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.about-section p{
+  font-family: 'Karla';
+  color: #495e57;
+  font-weight: 600;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-images-wrapper {
+  position: relative;
+  width: 400px; /* Adjust width as needed */
+  height: 500px;
+  margin: 0 auto;
+}
+
+.about-images-wrapper img {
+  position: absolute;
+  width: 190px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.image-top {
+  top: 0;
+  left: 150px;
+  z-index: 1;
+}
+
+.image-bottom {
+  top: 100px;
+  left: 20px;;
+  z-index: 2;
+}
+
+/*Footer*/
+.footer-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.footer-bg{
+  background-color: #495e57;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer-content {
+  font-family: 'Karla';
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Vertically center items */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.footer-logo {
+  flex-shrink: 0;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-content img{
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.footer-column {
+  min-width: 150px;
+}
+
+.footer-column h4 {
+  margin-bottom: 0.5rem;
+}
+
+/*Reserve*/
+.reserve-form form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Center items horizontally */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 1rem;
+  font-family: 'Karla', sans-serif;
+}
+
+.reserve-form h2{
+  text-align: center;
+  font-family: 'Karla';
+  font-size: 30px;
+  padding-bottom: 5px;
+  align-items: center;
+}
+
+.button-reserve{
+  font-family: 'Karla';
+  font-weight: bold;
+  font-size: 16px;
+  padding: 15px;
+  background-color: #f4c414;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.button-reserve:hover{
+  background-color: #deb00b
+}
+
+.reserve-form input,
+.reserve-form select {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #333333; /* dark grey */
   color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Karla', sans-serif;
+  color-scheme: dark;
 }
 
-.App-link {
-  color: #61dafb;
+.reserve-form label {
+  width: 100%;
+  font-weight: bold;
+  color: #333;
+  font-family: 'Karla', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.confirmation{
+  padding: 2rem;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+  font-family: 'Karla';
+}
+
+.confirmation .home-link {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #495E57;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-family: Karla, sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.confirmation .home-link:hover {
+  background-color: #3c4d47;
+}
+
+.confirmation h2{
+  font-weight: 700;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-grid,
+  .testimonials-grid,
+  .about-section {
+    flex-direction: column;
+    align-items: center;
   }
 }
+
